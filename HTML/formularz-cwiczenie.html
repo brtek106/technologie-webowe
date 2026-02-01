@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Wypożyczalnia samochodów</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Wypożyczalnia samochodów - najtaniej w mieście">
+    </head>
+    <body>
+        <h1>Wypożycz samochód</h1>
+        <form>
+        <fieldset>
+            <legend>Dane wypożyczającego</legend>
+            <div>
+                <label for="fullName">Imię i nazwisko</label>
+                <input type="text" id="fullName">
+            </div>
+            <div>
+                <label for="birthDate">Data urodzenia</label>
+                <input type="date" id="birthDate">
+            </div>
+            <div>
+                <label for="licenseId">Numer prawa jazdy</label>
+                <input type="number" id="licenseId">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Dane kontaktowe</legend>
+            <div>
+                <label for="email">Adres email</label>
+                <input type="email" id="email" placeholder="john@example.com">
+            </div>
+            <div>
+                <label for="tel">Telefon</label>
+                <input type="tel" placeholder="111222333">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Wybór samochodu</legend>
+           <div>
+             <label for="select"></label>
+            <select name="select" id="select">
+                <option>Opel Corsa</option>
+                <option>Fiat 500</option>
+                <option>Toyota Prius</option>
+                <option>Mercedes GLA200</option>
+            </select>
+           </div>
+            <p>Dodatkowa nawigacja</p>
+            <input type="radio" id="navNo" name="navi" checked>
+            <label for="navNo">Nie</label>
+            <input type="radio" id="navYes" name="navi">
+            <label for="navYes">Tak</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Okres wynajmu</legend>
+            <div>
+                <label for="start">Początek wynajmu</label>
+                <input type="date" id="start">
+            </div>
+            <div>
+                <label for="orderPlace">Miejsce odbioru</label>
+                <select name="place" id="orderPlace">
+                    <option>Lotnisko</option>
+                    <option>Dworzec PKP</option>
+                    <option>Dowolna lokalizacja (+100zł)</option>
+                </select>
+            </div>
+            <div>
+                <label for="end">Data zwrotu</label>
+                <input type="date" id="end">
+            </div>
+            <div>
+                <label for="orderReturn">Miejsce zwrotu</label>
+                <select name="returnPlace" id="orderReturn">
+                    <option>Lotnisko</option>
+                    <option>Dworzec PKP</option>
+                    <option>Dowolna lokalizacja (+100zł)</option>
+                </select>
+            </div>
+            <p>* Odbioru i zwrotu należy dokonać w godzinach 6-22, opłata naliczana jest za pełne doby</p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dodatkowe uwagi</legend>
+            <textarea cols="50" rows="10" placeholder="Jeżeli masz dodatkowe uwagi to wpisz je tutaj"></textarea>
+        </fieldset>
+        </form>
+        <button>Wypożycz</button>
+    </body>
+</html>
