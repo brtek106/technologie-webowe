@@ -1,0 +1,11 @@
+[href^="#"] {
+    color: orange;
+}
+
+[target="_blank"] {
+    color:green;
+}
+
+[href$="start.pl"] {
+    color: yellow;
+}
