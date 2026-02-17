@@ -1,0 +1,12 @@
+article > p:first-of-type {
+    font-style: italic;
+    color: grey;
+}
+
+li:nth-child(odd) {
+    background-color: red;
+}
+
+h2:first-child {
+    color:green;
+}
