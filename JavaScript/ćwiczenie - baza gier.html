@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
     <head>
-        <title>Baza gier</title>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
         <link rel="stylesheet" href="ćwiczenie - baza gier.css">
     </head>
-
     <body>
         <h1>Baza gier</h1>
-        <table border = 1 id="table">
-            <thead>
-                <tr id="header">
-                    <th>Tytuł gry</th>
-                    <th>Ocena</th>
-                    <th>Szczegóły</th>
-                    <th>Usuń grę</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Wiedźmin</td>
-                    <td>7</td>
-                    <td><button>Pokaż szczegóły</button></td>
-                    <td><button>Usuń</button></td>
-                </tr>
-                
-            </tbody>
-        </table>
+        <main>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tytuł gry</th>
+                            <th>Ocena</th>
+                            <th>Szczegóły</th>
+                            <th>Usuń grę</th>
+                        </tr>
+                    </thead>
+                    <tbody id="game-table-body">
+
+
+                    </tbody>
+                </table>
+                <p id="game-details"></p>
+            </section>
+            <section class="form">
+                <form>
+                    <input name="title" placeholder="Tytuł gry" id="game-title">
+                    <input name="rating" placeholder="Ocena" type="number" id="game-rating">
+                    <input name="details" placeholder="Opis" id="game-description">
+                    <button type="button" id="add-button">Dodaj grę</button>
+                </form>
+            </section>
+        </main>
+        <script src="ćwiczenie - baza gier.js"></script>
     </body>
-    <script src="ćwiczenie - baza giers.js"></script>
 </html>
