@@ -1,3 +1,4 @@
+<%@page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +8,6 @@
 <body>
     <h2>Wystąpił błąd</h2>
     <p>Prawdopodobnie podano błędne dane logowania.</p>
+    <a href="<%=request.getContextPath() + "/"%>">Powrót do strony głównej</a>
 </body>
 </html>

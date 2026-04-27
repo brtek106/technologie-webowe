@@ -19,7 +19,7 @@ public class LoginController extends HttpServlet {
             req.getSession().setAttribute("username", username);
             resp.sendRedirect("admin");
         } else {
-            resp.sendRedirect("error.html");
+            resp.sendRedirect("error.jsp");
         }
     }
 }

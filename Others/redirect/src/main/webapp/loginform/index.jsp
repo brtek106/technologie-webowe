@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2>Zaloguj się</h2>
-    <form action="login" method="post">
+    <form action="<%=request.getContextPath() + "/login"%>" method="post">
         <div>
             <label for="username">Nazwa użytkownika</label>
             <input name="username" id="username">
