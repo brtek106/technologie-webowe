@@ -1,0 +1,15 @@
+#firstFieldset {
+    text-align: center;
+    border-width: 3px;
+    border-color: black;
+}
+
+#secondFieldset {
+    border-width: 3px;
+    border-color: black;
+}
+
+input, textarea, button {
+    width: 100%;
+    margin-bottom: 20px;
+}
