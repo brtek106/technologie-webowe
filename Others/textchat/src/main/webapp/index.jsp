@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,23 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <fieldset id="firstFieldset">
+    <header>
         <h1>Witaj na JavaCzacie!</h1>
         <p>Poniżej widzisz historię konwersacji, możesz do niej dołączyć</p>
-    </fieldset>
-   <fieldset id="secondFieldset">
-       <form>
-           <p>Nie przesłano jeszcze żadnej wiadomości. Rozpocznij konwersację.</p>
-           <div>
-               <textarea rows="5" placeholder="Twoja wiadomość"></textarea><br>
-           </div>
-           <div>
-               <label for="nickname"></label>
-               <input id="nickname" placeholder="Twoja nazwa">
-           </div>
-           <input type="submit" value="Wyślij">
-       </form>
-   </fieldset>
-
+    </header>
+    <main>
+        <c:if test="${not empty messageHistory}">
+            <ul class="message-list">
+                <c:forEach var="message" items="${messageHistory}">
+                    <li><c:out value="${message}"/></li>
+                </c:forEach>
+            </ul>
+        </c:if>
+        <c:if test="${empty messageHistory}">
+            <p>Nie przesłano jeszcze żadnej wiadomości. Rozpocznij konwersację.</p>
+        </c:if>
+        <form action="" method="post">
+            <textarea name="message" placeholder="Twoja wiadomość" rows="5" required></textarea>
+            <input name="author" placeholder="Twoja nazwa" required>
+            <button>Wyślij</button>
+        </form>
+    </main>
 </body>
 </html>
