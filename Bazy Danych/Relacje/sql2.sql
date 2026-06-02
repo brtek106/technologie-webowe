@@ -14,8 +14,6 @@ VALUES
 	(2, 2, '2018-10-10', '2019-10-10'),
     (2, 3, '2019-10-10', '2020-10-10'),
     (3, 1, '2019-11-06', '2020-11-06');
-    
-DELETE FROM user WHERE id = 2;
 
 ALTER TABLE course
 ADD category_id INT,
