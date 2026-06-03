@@ -10,7 +10,7 @@
 
 DROP DATABASE IF EXISTS employees;
 CREATE DATABASE employees;
-\connect employees
+USE employees;
 
 SELECT 'CREATING DATABASE STRUCTURE' AS info;
 
