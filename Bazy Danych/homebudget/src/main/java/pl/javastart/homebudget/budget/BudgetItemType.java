@@ -1,4 +1,5 @@
 package pl.javastart.homebudget.budget;
 
-class BudgetItemType {
+public enum BudgetItemType {
+    INCOME, EXPENSE;
 }
