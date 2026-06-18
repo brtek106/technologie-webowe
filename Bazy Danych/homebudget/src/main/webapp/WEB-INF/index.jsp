@@ -1,18 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html lang="pl">
-<head>
-    <title>Budżet domowy</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles.css">
-</head>
 <body>
 <main>
     <h1>Budżet domowy</h1>
     <section class="summary">
         <h2>Podsumowanie</h2>
-        <p>Wpływy: ${requestScope.incomesSum}zł</p>
-        <p>Wydatki: ${requestScope.expensesSum}zł</p>
-        <p>Bilans: ${requestScope.balance}zł</p>
+        <p>Wpływy: ${requestScope.summary.incomes}zł</p>
+        <p>Wydatki: ${requestScope.summary.expenses}zł</p>
+        <p>Bilans: ${requestScope.summary.balance}zł</p>
     </section>
     <a href="${pageContext.request.contextPath}/add">Dodaj wpływ lub wydatek</a>
     <c:if test="${not empty requestScope.incomes}">
