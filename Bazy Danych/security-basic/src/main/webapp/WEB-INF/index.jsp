@@ -19,5 +19,6 @@
     </fieldset>
     <button type="submit">Oblicz</button>
 </form>
+<a href="${pageContext.request.contextPath}/logout">Wyloguj się</a>
 </body>
 </html>
