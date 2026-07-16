@@ -1,11 +1,11 @@
-package pl.javastart.readstack.client.home;
+package pl.javastart.readstack.client.category;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import pl.javastart.readstack.domain.api.CategoryName;
+import pl.javastart.readstack.domain.api.CategoryFullInfo;
 import pl.javastart.readstack.domain.api.CategoryService;
 import pl.javastart.readstack.domain.api.DiscoveryBasicInfo;
 import pl.javastart.readstack.domain.api.DiscoveryService;
@@ -13,17 +13,19 @@ import pl.javastart.readstack.domain.api.DiscoveryService;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("")
-public class HomeController extends HttpServlet {
-    private final DiscoveryService discoveryService = new DiscoveryService();
+@WebServlet("/category")
+public class CategoryController extends HttpServlet {
     private final CategoryService categoryService = new CategoryService();
+    private final DiscoveryService discoveryService = new DiscoveryService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<DiscoveryBasicInfo> discoveries = discoveryService.findAll();
+        int categoryId = Integer.parseInt(req.getParameter("id"));
+        CategoryFullInfo category = categoryService.findById(categoryId)
+                .orElseThrow();
+        req.setAttribute("category", category);
+        List<DiscoveryBasicInfo> discoveries = discoveryService.findByCategory(categoryId);
         req.setAttribute("discoveries", discoveries);
-        List<CategoryName> categories = categoryService.findAllCategoryNames();
-        req.setAttribute("categories", categories);
-        req.getRequestDispatcher("/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("category.jsp").forward(req, resp);
     }
 }
